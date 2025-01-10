@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Medicine AI Demo</title>
+  <style>
+    body { margin: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; background: #f0f9ff; }
+    canvas { border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
+  </style>
+</head>
+<body>
+  <canvas id="demoCanvas" width="640" height="360"></canvas>
+  <script>
+    const canvas = document.getElementById('demoCanvas');
+    const ctx = canvas.getContext('2d');
+    let frame = 0;
+
+    function draw() {
+      // Clear canvas
+      ctx.fillStyle = '#f0f9ff';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      
+      // Draw moving circle
+      ctx.beginPath();
+      ctx.arc(
+        canvas.width/2 + Math.cos(frame/10) * 100,
+        canvas.height/2 + Math.sin(frame/10) * 100,
+        30,
+        0,
+        Math.PI * 2
+      );
+      ctx.fillStyle = '#3b82f6';
+      ctx.fill();
+      
+      // Add text
+      ctx.font = 'bold 32px Arial';
+      ctx.fillStyle = '#1e3a8a';
+      ctx.textAlign = 'center';
+      ctx.fillText('Medicine AI Demo', canvas.width/2, 80);
+      
+      frame++;
+      requestAnimationFrame(draw);
+    }
+
+    draw();
+  </script>
+</body>
+</html>

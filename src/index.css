@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes expandButton {
+  from {
+    clip-path: inset(0 50% 0 0);
+    opacity: 0;
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+  }
+}
+
+.animate-expand {
+  animation: expandButton 0.4s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+html {
+  scroll-behavior: smooth;
+  overscroll-behavior-y: none;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Only apply snap scrolling to non-product sections */
+.snap-section {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.phone-section {
+  min-height: 100vh;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.content-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
