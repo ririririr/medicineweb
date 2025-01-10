@@ -15,7 +15,7 @@ const PhotoExpanded = ({ onClose }: PhotoExpandedProps) => {
 
   return (
     <div className="fixed inset-0 z-50">
-      {/* Semi-transparent backdrop */}
+      {/* Sevmi-transparent backdrop */}
       <div className="absolute inset-0 bg-black/20 backdrop-blur-sm"></div>
       
       {/* Full viewport container */}
