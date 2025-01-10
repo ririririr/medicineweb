@@ -7,7 +7,7 @@ const menuOptions = [
   { icon: Camera, label: 'Medicine Recognition', images: ['/phonestates/reco_1.png', '/phonestates/reco_2.png'], color: 'bg-green-500' },
   { icon: MessageCircle, label: 'Doctor Notes', images: ['/phonestates/doctor_1.png', '/phonestates/doctor_2.png'], color: 'bg-green-600' },
   { icon: Pill, label: 'Medicine Reminders', images: ['/phonestates/reminder_1.png', '/phonestates/reminder_2.png', '/phonestates/reminder_3.png'], color: 'bg-green-700' },
-  { icon: AlertCircle, label: 'Smart Notifications', image: '/phonestates/smartnotifications.png', color: 'bg-green-800' }
+  { icon: AlertCircle, label: 'Smart Notifications', image: '/phonestates/note.png', color: 'bg-green-800' }
 ];
 
 const ProductPage = () => {
@@ -88,7 +88,7 @@ const ProductPage = () => {
         <div className="relative w-full h-0 pb-[56.25%]">
           <iframe
             className="absolute top-0 left-0 w-full h-full"
-            src="https://www.youtube.com/embed/e2zi6FRZLwM"
+            src="https://www.youtube.com/embed/5VbS-nOPnZI"
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

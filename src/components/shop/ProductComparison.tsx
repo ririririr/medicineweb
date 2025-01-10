@@ -43,7 +43,7 @@ const ProductComparison = () => {
               <th className="py-4 text-left text-gray-900 font-bold">Features</th>
               <th className="py-4 text-center text-gray-600">Free</th>
               <th className="py-4 text-center text-green-600 font-bold text-lg">
-                AI+ ($9.99/month)
+                AI+ ($9.9/month)
               </th>
             </tr>
           </thead>
