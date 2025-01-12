@@ -78,72 +78,36 @@ const ProductPage = () => {
         <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-green-50 to-transparent" />
       </div>
 
-      {/* Watch Our Video */}
-      <div className="text-center text-green-600 text-4xl font-bold mt-16">
-        WATCH OUR VIDEO!
+      {/* Why Medicine AI? */}
+      <div className="text-center text-green-600 font-bold uppercase mt-16" style={{ fontSize: '4rem' }}>
+        WHY MEDICINE AI?
       </div>
 
-      {/* Embedded YouTube video */}
-      <div className="max-w-7xl mx-auto px-8 py-16">
-        <div className="relative w-full h-0 pb-[56.25%]">
-          <iframe
-            className="absolute top-0 left-0 w-full h-full"
-            src="https://www.youtube.com/embed/5VbS-nOPnZI"
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
+      {/* Image comp.jpg in a box with rounded edges */}
+      <div className="w-full my-8 px-8">
+        <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+          <img src="/comp.jpg" alt="Comparison" className="w-full h-auto" />
         </div>
       </div>
-
-      {/* Info section */}
-      <div className="max-w-7xl mx-auto px-8 py-16 flex items-start gap-16">
-        {/* Logo */}
-        <div>
-          <img 
-            src="/medicinelogo.png" 
-            alt="Medicine AI Logo" 
-            className="w-60 h-60 object-contain"
-          />
-        </div>
-
-        {/* Features list */}
-        <div className="space-y-6">
-          <div className="flex items-center gap-4">
-            <span className="text-2xl font-bold text-gray-400">1)</span>
-            <h2 className="text-2xl uppercase">
-              <span className="text-gray-900">A SMART</span>{' '}
-              <span className="font-bold text-green-600">
-                HEALTHCARE ASSISTANT
-              </span>
-            </h2>
-          </div>
-          <div className="flex items-center gap-4">
-            <span className="text-2xl font-bold text-gray-400">2)</span>
-            <h2 className="text-2xl uppercase">
-              <span className="text-gray-900">AN INSTANT HEALTH INFO</span>{' '}
-              <span className="font-bold text-green-600">
-                COMMUNICATION APP
-              </span>
-            </h2>
-          </div>
-          <div className="flex items-center gap-4">
-            <span className="text-2xl font-bold text-gray-400">3)</span>
-            <h2 className="text-2xl uppercase">
-              <span className="text-gray-900">A PERSONALIZED</span>{' '}
-              <span className="font-bold text-green-600">
-                MEDICINE MANAGER
-              </span>
-            </h2>
-          </div>
-        </div>
+      <div className="text-center mt-16">
+        <h2 className="text-5xl font-bold text-green-600">OUR ADVANTAGES</h2>
       </div>
+      {/* Bullet Points in Two Boxes */}
+      <div className="bg-white rounded-2xl shadow-lg p-8 border border-green-100 flex-1 mt-0 md:mt-16">
+  <ul className="list-disc list-inside space-y-4 text-black font-bold uppercase" style={{ fontSize: '2rem' }}>
+    <li><span className="text-green-600">AI</span> Powered</li>
+    <li>Patented <span className="text-green-600">Design</span> and <span className="text-green-600">Copyright</span></li>
+    <li>Exclusive <span className="text-green-600">Database</span></li>
+    <li><span className="text-green-600">Personalized</span> Services</li>
+    <li>Industrial <span className="text-green-600">Collaboration</span></li>
+  </ul>
+</div>
+
 
       {/* iPhone Frame with Features */}
       <div className="max-w-7xl mx-auto px-8 py-16 text-center">
         <h2 className="text-6xl font-bold mb-8">
-          <span className="text-green-600">PHONE</span> <span className="text-green-600">DEMO</span>
+          <span className="text-green-600">TRY</span> <span className="text-green-600">IT!</span>
         </h2>
         <div className="relative w-[380px] h-[600px] mx-auto bg-black rounded-[55px] shadow-2xl p-3 border-[8px] border-black">
           <div className="relative w-full h-full bg-white rounded-[48px] overflow-hidden">

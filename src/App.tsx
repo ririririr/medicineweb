@@ -34,8 +34,8 @@ function App() {
             <PhoneDevice />
           </div>
         );
-//      case 'qr':
-//        return <QRPage />;
+      //case 'qr':
+       // return < />;
       default:
         return <AboutPage />;
     }

@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import WhatWeDo from './WhatWeDo';
 import OurMission from './OurMission';
 import WhoWeAre from './WhoWeAre';
@@ -8,6 +8,8 @@ const AboutPage = () => {
   const whatWeDoRef = useRef<HTMLDivElement>(null);
   const ourMissionRef = useRef<HTMLDivElement>(null);
   const whoWeAreRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [videoLink, setVideoLink] = useState('https://www.youtube.com/embed/5VbS-nOPnZI');
 
   const scrollToSection = (section: string) => {
     const refs = {
@@ -22,10 +24,67 @@ const AboutPage = () => {
     });
   };
 
+  useEffect(() => {
+    videoRef.current?.play();
+
+    // Detect user location using ipinfo
+    fetch('https://ipinfo.io/json?token=40ec88ed46828d661fec624bddc886ac') // Replace with your token
+      .then(response => response.json())
+      .then(data => {
+        if (data.country === 'CN') {
+          setVideoLink('//player.bilibili.com/player.html?aid=375588815&bvid=BV1so4y1m7U5&cid=339262048&page=1');
+        }
+      })
+      .catch(error => console.error('Error fetching IP location:', error));
+  }, []);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 to-emerald-50 snap-section">
       <div className="w-full pt-24">
+        {/* Video header */}
+        <div className="w-full relative mb-8">
+          <video
+            ref={videoRef}
+            className="w-full h-auto"
+            muted
+            playsInline
+          >
+            <source src="/medicinelogo.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        {/* Watch Our Video */}
+        <div className="text-center text-green-600 text-4xl font-bold mt-16">
+          WATCH OUR VIDEO!
+        </div>
+
+        {/* Embedded Video */}
+        <div className="max-w-7xl mx-auto px-8 py-16">
+          <div className="relative w-full h-0 pb-[56.25%]">
+            <iframe
+              className="absolute top-0 left-0 w-full h-full"
+              src={videoLink}
+              title="Video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </div>
+
         <div className="max-w-4xl mx-auto px-6 space-y-8">
+          {/* Mission Section */}
+          <div className="bg-white rounded-2xl shadow-lg p-8 border border-green-100">
+            <h1 className="text-4xl font-bold text-gray-900 mb-6 text-center flex items-center justify-center">
+              Our Mission
+              <Target className="ml-3 text-green-600" size={32} />
+            </h1>
+            <p className="text-xl text-gray-700 leading-relaxed text-center">
+              Our mission is to empower individuals to lead healthier, more independent lives by providing them with a user-friendly and intelligent personal medical assistant. We aim to improve medical adherence, simplify medical complexities, and enhance communication between patients, doctors, and family members, ultimately enhancing the quality of life for our users and their families.
+            </p>
+          </div>
+
           {/* Our Values Section */}
           <div className="relative bg-white rounded-2xl shadow-lg p-8 border border-green-100 overflow-hidden">
             <div className="absolute inset-0">
@@ -63,59 +122,43 @@ const AboutPage = () => {
             </div>
           </div>
 
-          {/* Mission Section */}
-          <div className="bg-white rounded-2xl shadow-lg p-8 border border-green-100">
-            <h1 className="text-4xl font-bold text-gray-900 mb-6 text-center flex items-center justify-center">
-              Our Mission
-              <Target className="ml-3 text-green-600" size={32} />
-            </h1>
-            <p className="text-xl text-gray-700 leading-relaxed text-center">
-              Our mission is to empower individuals to lead healthier, more independent lives by providing them with a user-friendly and intelligent personal medical assistant. We aim to improve medical adherence, simplify medical complexities, and enhance communication between patients, doctors, and family members, ultimately enhancing the quality of life for our users and their families.
-            </p>
-          </div>
-           <div className="bg-white rounded-2xl shadow-lg p-8 border border-green-100">
-            <h1 className="text-4xl font-bold text-gray-900 mb-6 text-center flex items-center justify-center">
-              Our Vision
-              <Eye className="ml-3 text-green-600" size={32} />
-            </h1>
-            <p className="text-xl text-gray-700 leading-relaxed text-center">
-              We envision a world where healthcare technology empowers patients to stay connected with their family members while being able to live independently. Complex medical notes and medicine intake schedules will be simplified and easily accessible, ensuring seamless health management for all users. Patients will have direct access to effective, personalized health suggestions, enabling them to take control of their well-being. Healthcare technology will create a future where managing health is intuitive, precise, and empowering for individuals and their loved ones.
-            </p>
-          </div>
-          {/* Logo Section */}
-          <div className="relative group">
-            <div className="absolute inset-0 bg-gradient-to-r from-green-50 via-transparent to-green-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <div className="absolute inset-0 bg-gradient-to-t from-green-50 via-transparent to-green-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100" />
-            <div className="absolute inset-0 bg-gradient-to-tr from-green-50/90 via-transparent to-green-50/90 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200" />
-            <div className="absolute inset-0 bg-gradient-to-bl from-green-50/90 via-transparent to-green-50/90 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-300" />
-            <img 
-              src="/medicinelogo.png" 
-              alt="Medicine AI Logo" 
-              className="w-1/2 h-auto mx-auto relative z-10 rounded-2xl transform transition-transform duration-500 group-hover:scale-[1.02]"
-            />
-          </div>
+          {/* Logo and Logo Design Section */}
+          <div className="flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 md:space-x-8 w-full">
+            {/* Logo Section */}
+            <div className="relative group w-full md:w-1/2">
+              <div className="absolute inset-0 bg-gradient-to-r from-green-50 via-transparent to-green-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-t from-green-50 via-transparent to-green-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-green-50/90 via-transparent to-green-50/90 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200" />
+              <div className="absolute inset-0 bg-gradient-to-bl from-green-50/90 via-transparent to-green-50/90 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-300" />
+              <img 
+                src="/medicinelogo.png" 
+                alt="Medicine AI Logo" 
+                className="w-full h-auto mx-auto relative z-10 rounded-2xl transform transition-transform duration-500 group-hover:scale-[1.02]"
+              />
+            </div>
 
-          {/* Logo Design Section */}
-          <div className="bg-white rounded-2xl shadow-lg p-8 border border-green-100">
-            <h1 className="text-4xl font-bold text-gray-900 mb-6 text-center">
-              <span className="text-green-600">Logo</span> Design
-            </h1>
-            <div className="space-y-4">
-              <div className="flex items-start space-x-4">
-                <span className="text-green-600 font-bold">1)</span>
-                <p className="text-xl text-gray-700 leading-relaxed"><span className="font-semibold">Circular Layout:</span> The circular shape represents unity, symbolizing that patients, doctors, and family are seamlessly connected through our AI map.</p>
-              </div>
-              <div className="flex items-start space-x-4">
-                <span className="text-green-600 font-bold">2)</span>
-                <p className="text-xl text-gray-700 leading-relaxed"><span className="font-semibold">Stethoscope:</span> The central stethoscope is a universal symbol of medicine and healthcare. Its placement emphasizes the core focus on medical care and support.</p>
-              </div>
-              <div className="flex items-start space-x-4">
-                <span className="text-green-600 font-bold">3)</span>
-                <p className="text-xl text-gray-700 leading-relaxed"><span className="font-semibold">Neural Network Pattern:</span> Surrounding the stethoscope is a futuristic neural network design. This pattern represents the AI technology we employed to power our smart medical assistant.</p>
-              </div>
-              <div className="flex items-start space-x-4">
-                <span className="text-green-600 font-bold">4)</span>
-                <p className="text-xl text-gray-700 leading-relaxed"><span className="font-semibold">AI and Medicine:</span> The harmonious combination of the neural network pattern and the stethoscope symbolizes the integration of AI into our everyday health management.</p>
+            {/* Logo Design Section */}
+            <div className="bg-white rounded-2xl shadow-lg p-8 border border-green-100 w-full md:w-1/2">
+              <h1 className="text-4xl font-bold text-gray-900 mb-6 text-center">
+                <span className="text-green-600">Logo</span> Design
+              </h1>
+              <div className="space-y-4">
+                <div className="flex items-start space-x-4">
+                  <span className="text-green-600 font-bold">1)</span>
+                  <p className="text-xl text-gray-700 leading-relaxed"><span className="font-semibold">Circular Layout:</span> The circular shape represents unity, symbolizing that patients, doctors, and family are seamlessly connected through our AI map.</p>
+                </div>
+                <div className="flex items-start space-x-4">
+                  <span className="text-green-600 font-bold">2)</span>
+                  <p className="text-xl text-gray-700 leading-relaxed"><span className="font-semibold">Stethoscope:</span> The central stethoscope is a universal symbol of medicine and healthcare. Its placement emphasizes the core focus on medical care and support.</p>
+                </div>
+                <div className="flex items-start space-x-4">
+                  <span className="text-green-600 font-bold">3)</span>
+                  <p className="text-xl text-gray-700 leading-relaxed"><span className="font-semibold">Neural Network Pattern:</span> Surrounding the stethoscope is a futuristic neural network design. This pattern represents the AI technology we employed to power our smart medical assistant.</p>
+                </div>
+                <div className="flex items-start space-x-4">
+                  <span className="text-green-600 font-bold">4)</span>
+                  <p className="text-xl text-gray-700 leading-relaxed"><span className="font-semibold">AI and Medicine:</span> The harmonious combination of the neural network pattern and the stethoscope symbolizes the integration of AI into our everyday health management.</p>
+                </div>
               </div>
             </div>
           </div>
