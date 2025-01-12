@@ -100,7 +100,7 @@ const AboutPage = () => {
                 <div className="flex items-start space-x-4">
                   <span className="text-green-600 font-bold">1)</span>
                   <div>
-                    <h4 className="text-2xl font-semibold text-gray-900 mb-2">User-Centric</h4>
+                    <h4 className="text-2xl font-semibold text-gray-900 mb-2">Accessible</h4>
                     <p className="text-xl text-gray-700 leading-relaxed">Our app is designed with our users in mind: instead of texting, which may be challenging for elderly individuals, users can simply ask our AI assistant through a voice call. While complex medicine names are hard to type, users can simply take a photo of the medicine packaging to add it to the reminder list.</p>
                   </div>
                 </div>
