@@ -77,18 +77,16 @@ const ProductPage = () => {
         {/* Gradient overlay for fade effect */}
         <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-green-50 to-transparent" />
       </div>
-
-      {/* Why Medicine AI? */}
       <div className="text-center text-green-600 font-bold uppercase mt-16" style={{ fontSize: '4rem' }}>
-        WHY MEDICINE AI?
+        OUR FEATURES
       </div>
-
-      {/* Image comp.jpg in a box with rounded edges */}
+      {/* Image features.jpg */}
       <div className="w-full my-8 px-8">
         <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
-          <img src="/comp.jpg" alt="Comparison" className="w-full h-auto" />
+          <img src="/features.jpg" alt="Features" className="w-full h-auto" />
         </div>
       </div>
+
       <div className="text-center mt-16">
         <h2 className="text-5xl font-bold text-green-600">OUR ADVANTAGES</h2>
       </div>
@@ -102,13 +100,15 @@ const ProductPage = () => {
           <li>Industrial <span className="text-green-600">Collaboration</span></li>
         </ul>
       </div>
-      <div className="text-center text-green-600 font-bold uppercase mt-16" style={{ fontSize: '4rem' }}>
-        OUR FEATURES
+            {/* Why Medicine AI? */}
+            <div className="text-center text-green-600 font-bold uppercase mt-16" style={{ fontSize: '4rem' }}>
+        WHY MEDICINE AI?
       </div>
-      {/* Image features.jpg */}
+
+      {/* Image comp.jpg in a box with rounded edges */}
       <div className="w-full my-8 px-8">
         <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
-          <img src="/features.jpg" alt="Features" className="w-full h-auto" />
+          <img src="/comp.jpg" alt="Comparison" className="w-full h-auto" />
         </div>
       </div>
 
@@ -137,7 +137,7 @@ const ProductPage = () => {
                   onClick={() => setSelectedImage(menuOptions[0].image)}
                 >
                   <Brain size={32} />
-                  <span className="mt-2 font-medium">AI Health Assistant</span>
+                  <span className="mt-2 font-medium">AI Doctor</span>
                 </button>
                 <button
                   className="bg-green-400 text-white p-6 rounded-2xl flex flex-col items-center justify-center hover:bg-green-500 transition-colors"
