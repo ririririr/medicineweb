@@ -17,7 +17,7 @@ const FloatingAIButton: React.FC<FloatingAIButtonProps> = ({ onOpenMenu }) => {
           className="text-white group-hover:animate-pulse" 
         />
         <div className="absolute -top-8 right-0 bg-white px-3 py-1 rounded-full text-sm font-medium text-gray-700 shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-          AI Assistant
+          AI Doctor
         </div>
       </button>
     </div>

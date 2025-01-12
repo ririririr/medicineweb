@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Brain, Bell, Camera, MessageCircle, Pill, AlertCircle, ArrowRight, ArrowLeft } from 'lucide-react';
 
 const menuOptions = [
-  { icon: Brain, label: 'AI Health Assistant', image: '/phonestates/assist.png', color: 'bg-green-300' },
+  { icon: Brain, label: 'AI Health Assistant', image: '/phonestates/ai.png', color: 'bg-green-300' },
   { icon: Bell, label: 'Health Records', image: '/phonestates/records.png', color: 'bg-green-400' },
   { icon: Camera, label: 'Medicine Recognition', images: ['/phonestates/reco_1.png', '/phonestates/reco_2.png'], color: 'bg-green-500' },
   { icon: MessageCircle, label: 'Doctor Notes', images: ['/phonestates/doctor_1.png', '/phonestates/doctor_2.png'], color: 'bg-green-600' },
