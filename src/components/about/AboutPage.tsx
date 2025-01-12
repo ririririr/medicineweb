@@ -28,7 +28,7 @@ const AboutPage = () => {
     videoRef.current?.play();
 
     // Detect user location using ipinfo
-    fetch('https://ipinfo.io/json?token=40ec88ed46828d661fec624bddc886ac') // Replace with your token
+    fetch('https://ipinfo.io/119.124.91.116?token=77b3e107cd306e') // Replace with your token
       .then(response => response.json())
       .then(data => {
         if (data.country === 'CN') {
