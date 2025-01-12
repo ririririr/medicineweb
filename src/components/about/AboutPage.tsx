@@ -32,7 +32,7 @@ const AboutPage = () => {
       .then(response => response.json())
       .then(data => {
         if (data.country === 'CN') {
-          setVideoLink('//player.bilibili.com/player.html?aid=375588815&bvid=BV1so4y1m7U5&cid=339262048&page=1');
+          setVideoLink('//player.bilibili.com/player.html?bvid=BV1EJc3eXEA7');
         }
       })
       .catch(error => console.error('Error fetching IP location:', error));

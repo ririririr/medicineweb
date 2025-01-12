@@ -94,15 +94,23 @@ const ProductPage = () => {
       </div>
       {/* Bullet Points in Two Boxes */}
       <div className="bg-white rounded-2xl shadow-lg p-8 border border-green-100 flex-1 mt-0 md:mt-16">
-  <ul className="list-disc list-inside space-y-4 text-black font-bold uppercase" style={{ fontSize: '2rem' }}>
-    <li><span className="text-green-600">AI</span> Powered</li>
-    <li>Patented <span className="text-green-600">Design</span> and <span className="text-green-600">Copyright</span></li>
-    <li>Exclusive <span className="text-green-600">Database</span></li>
-    <li><span className="text-green-600">Personalized</span> Services</li>
-    <li>Industrial <span className="text-green-600">Collaboration</span></li>
-  </ul>
-</div>
-
+        <ul className="list-disc list-inside space-y-4 text-black font-bold uppercase" style={{ fontSize: '2rem' }}>
+          <li><span className="text-green-600">AI</span> Powered</li>
+          <li>Patented <span className="text-green-600">Design</span> and <span className="text-green-600">Copyright</span></li>
+          <li>Exclusive <span className="text-green-600">Database</span></li>
+          <li><span className="text-green-600">Personalized</span> Services</li>
+          <li>Industrial <span className="text-green-600">Collaboration</span></li>
+        </ul>
+      </div>
+      <div className="text-center text-green-600 font-bold uppercase mt-16" style={{ fontSize: '4rem' }}>
+        OUR FEATURES
+      </div>
+      {/* Image features.jpg */}
+      <div className="w-full my-8 px-8">
+        <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+          <img src="/features.jpg" alt="Features" className="w-full h-auto" />
+        </div>
+      </div>
 
       {/* iPhone Frame with Features */}
       <div className="max-w-7xl mx-auto px-8 py-16 text-center">
